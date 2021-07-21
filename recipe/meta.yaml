@@ -1,5 +1,5 @@
 {% set name = "curlify2" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/curlify2-{{ version }}.tar.gz
-  sha256: 73fc3f0d090d6e06d45b2d90b189cc912bbedfaecb8302002cd3b60473d221ab
+  sha256: 2a9dc7b8902e1301f3600ccfa61905e9812583dba83798310db678fb9ed6e256
 
 build:
   number: 0
