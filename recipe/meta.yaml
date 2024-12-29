@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/curlify2-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/curlify2-{{ version }}.tar.gz
   sha256: 6c3a98dc8603b76da990f58754b18ec4e9bfe5b881fc52d33ddf9d9096568809
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,12 +19,12 @@ requirements:
   host:
     - pip
     - poetry
-    - python >=3.6,<4.0
+    - python {{ python_min }}
   run:
     - black >=21.7b0
     - pytest >=7.3.1,<8.0.0
     - pytest-httpx >=0.22.0,<0.23.0
-    - python >=3.6,<4.0
+    - python >={{ python_min }},<4.0
     - requests >=2.31.0,<3.0.0
     - responses >=0.23.1,<0.24.0
 
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/marcuxyz/curlify2
